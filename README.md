@@ -1,2 +1,3 @@
 # NanoBin
-Shell scripts and aliases for Zsh
+
+Shell scripts, aliases, and dotfiles

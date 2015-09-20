@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Get public IP address
+curl curlmyip.com
