@@ -20,8 +20,10 @@ reboot
 ```
 
 ```
-ssh-copy-id blackabacus.com
-ssh blackabacus.com
+ssh-copy-id <host>
+ssh <host>
 git clone https://github.com/NanoDano/NanoBin
 NanoBin/setmeup.sh
 chsh  # /bin/zsh
+exit
+```
