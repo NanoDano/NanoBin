@@ -13,8 +13,8 @@ useradd -d /home/dtron -m -G wheel dtron
 passwd dtron
 
 vim /etc/ssh/sshd_config  # AllowRootLogin no
-
-yum install yum-cron zsh git
+sudo git 
+yum install yum-cron zsh git epel-release
 
 reboot
 ```
@@ -25,5 +25,12 @@ ssh <host>
 git clone https://github.com/NanoDano/NanoBin
 NanoBin/setmeup.sh
 chsh  # /bin/zsh
-exit
+```
+
+```
+sudo yum install python34
+
+curl -O https://bootstrap.pypa.io/get-pip.py
+
+sudo python3.4 get-pip.py
 ```
