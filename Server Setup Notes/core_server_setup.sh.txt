@@ -1,0 +1,76 @@
+core_server_setup.shh
+==================================
+
+yum update
+
+# Set up iptables
+setup_iptables()
+{
+iptables -F
+
+# Drop null TCP recon packets
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+
+# Reject syn flood attack
+iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
+
+# Start whitelisting ports
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+
+# Allow outgoing
+iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -P OUTPUT ACCEPT
+
+iptables -P INPUT DROP
+
+# Review and save ## Something not working right here
+iptables -L -n
+iptables-save | sudo tee /etc/sysconfig/iptables
+}
+
+setup_iptables
+
+
+
+# General server settings
+
+hostnamectl set-hostname $myDomainName
+timedatectl set-timezone 'America/Chicago'
+
+# Add user account
+useradd -d /home/$user -m -G (sudo|wheel) $user
+passwd $user
+
+# Copy SSH Id from home computer
+ssh-copy-id $server
+
+# Disable root login
+vim /etc/ssh_sshd_config
+# PermitRootLogin no
+sudo service sshd restart
+
+
+sudo yum -y install epel-release yum-cron fail2ban zsh git
+
+cd /etc/fail2ban
+sudo cp fail2ban.{conf,local}
+sudo cp jail.{conf,local}
+
+sudo sed -i "s/backend = auto/backend = systemd/" jail.local
+sudo vim /etc/fail2ban/jail.local #add enabled = true right under [sshd]
+
+sudo service fail2ban restart
+sudo systemctl enable fail2ban
+
+#yum-cron for auto updates
+sudo yum install -y yum-cron
+sudo sed -i "s/apply_updates = no/apply_updates = yes/" /etc/yum/yum-cron.conf
+
+# Customize shell stuff
+chsh -s /bin/zsh dtron
+cd ~; git clone https://github.com/NanoDano/NanoBin
+NanoBin/setmeup.sh
+

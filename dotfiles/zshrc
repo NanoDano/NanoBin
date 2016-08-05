@@ -2,12 +2,13 @@
 export PATH=$PATH:$HOME/NanoBin/bin:$HOME/.rvm/bin
 
 # Plugins (~/.oh-my-zsh/custom/plugins)
-plugins=(git archlinux go golang cp ruby rvm bundler svn)  
+plugins=(git archlinux go golang cp ruby rvm bundler svn ubuntu centos yum pacman composer debian docker encode64 pip python sublime)  
 
 # Zsh Theme
 export ZSH_THEME=takashiyoshida
 
 # Aliases
+alias h='history'
 alias zrc='vim ~/.zshrc'
 alias zrcl='vim ~/.zshrc.local'
 alias py='python3'

@@ -1,4 +1,4 @@
-Typical new server setup - Linode/CentOS
+CentOS Server Setup
 ========================================
 
 ```
@@ -13,7 +13,6 @@ useradd -d /home/dtron -m -G wheel dtron
 passwd dtron
 
 vim /etc/ssh/sshd_config  # AllowRootLogin no
-sudo git 
 yum install yum-cron zsh git epel-release
 
 reboot

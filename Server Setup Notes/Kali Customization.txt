@@ -1,0 +1,10 @@
+Kali Customization
+==================
+
+
+Install my ptf
+install my directory of addons
+
+install tcpblackhole
+install subl
+pycharm
