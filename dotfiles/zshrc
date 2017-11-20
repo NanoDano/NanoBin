@@ -1,5 +1,6 @@
 # Path
 export PATH=$PATH:$HOME/NanoBin/bin:$HOME/.rvm/bin
+export GOPATH=$HOME
 
 # Plugins (~/.oh-my-zsh/custom/plugins)
 plugins=(git archlinux go golang cp ruby rvm bundler svn ubuntu centos yum pacman composer debian docker encode64 pip python sublime)  
