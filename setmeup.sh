@@ -9,4 +9,5 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   git clone https://github.com/robbyrussell/oh-my-zsh $HOME/.oh-my-zsh
 fi
 
-echo "" >> ~/.zshrc.local
+touch ${HOME}/.zshrc.local
+touch ${HOME}/.vimrc.local
