@@ -73,4 +73,7 @@ set -i vi
 if [ -f /usr/bin/nvim ]
 then
   alias vim=nvim
+  export EDITOR=nvim
+else
+  export EDITOR=vim
 fi
