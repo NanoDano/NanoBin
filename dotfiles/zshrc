@@ -68,13 +68,9 @@ EOF
     echo "Sent message to ${to_address}: $message"
 }
 
-
-
-###-tns-completion-start-###
-if [ -f /home/nanodano/.tnsrc ]; then 
-    source /home/nanodano/.tnsrc 
-fi
-###-tns-completion-end-###
-
 set -i vi
 
+if [ -f /usr/bin/nvim ]
+then
+  alias vim=nvim
+fi
