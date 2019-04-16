@@ -1,5 +1,5 @@
 # Path
-export PATH=$PATH:$HOME/NanoBin/bin:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/NanoBin/bin:$HOME/.rvm/bin:$HOME/bin
 export GOPATH=$HOME
 
 # Plugins (~/.oh-my-zsh/custom/plugins)
