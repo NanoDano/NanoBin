@@ -3,6 +3,8 @@
 # Symlink zsh & vim config
 ln -s $HOME/NanoBin/dotfiles/zshrc $HOME/.zshrc
 ln -s $HOME/NanoBin/dotfiles/vimrc $HOME/.vimrc
+mkdir -p $HOME/.config/nvim
+ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 # Clone oh-my-zsh if necessary
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
