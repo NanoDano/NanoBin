@@ -5,7 +5,7 @@ Host sandbox # Connect using ``ssh sandbox`` or ``scp sandbox:* .``
     #User myusername
     #IdentityFile ~/.ssh/id_rsa
     #Port 22
-    #ServerAliveInternal 30
+    #ServerAliveInterval 30
     #ProxyJump jumphost.local
     
     # If using local forward, do ssh -f -N host
