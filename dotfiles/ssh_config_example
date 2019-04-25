@@ -1,4 +1,9 @@
 # Example ~/.ssh/config file
+# Can also set them system-wide in `/etc/ssh/ssh_config`
+
+# Settings for all SSH connections
+Host *
+    IPQoS throughput  # Needed to fix SSH in Fedora in VMWare
 
 Host sandbox # Connect using ``ssh sandbox`` or ``scp sandbox:* .``
     HostName sandbox.local
