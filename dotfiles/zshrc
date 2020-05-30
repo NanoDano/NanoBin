@@ -6,7 +6,10 @@ export GOPATH=$HOME
 #plugins=(git archlinux go golang cp ruby rvm bundler svn ubuntu centos yum pacman composer debian docker encode64 pip python sublime vi-mode tmux)
 plugins=(git ruby docker pip python vi-mode tmux)
 # Zsh Theme
+#export ZSH_THEME=random
 export ZSH_THEME=flazz
+export ZSH_THEME=rkj-repos
+# re5et
 
 # Aliases
 alias h='history'
