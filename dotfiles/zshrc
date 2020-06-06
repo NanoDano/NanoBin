@@ -4,9 +4,12 @@ export GOPATH=$HOME
 
 # Plugins (~/.oh-my-zsh/custom/plugins)
 #plugins=(git archlinux go golang cp ruby rvm bundler svn ubuntu centos yum pacman composer debian docker encode64 pip python sublime vi-mode tmux)
-plugins=(git pip python vi-mode tmux)
+plugins=(git pip python docker vi-mode tmux)
 # Zsh Theme
+#export ZSH_THEME=random
 export ZSH_THEME=flazz
+export ZSH_THEME=rkj-repos
+# re5et
 
 # Aliases
 alias h='history'
