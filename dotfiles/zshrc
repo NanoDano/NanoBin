@@ -73,6 +73,12 @@ EOF
 
 set -i vi
 
+# Activate Python venv if none is active
+if [[ -z $VIRTUAL_ENV  ]]
+then
+  source $HOME/venv/bin/activate
+fi
+
 # if [ -f /usr/bin/nvim ]
 # then
 #   alias vim=nvim
