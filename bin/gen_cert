@@ -2,7 +2,7 @@
 
 # Generates SSL cert and key in current directory
 
-echo "Generating cert and key: cert.pem, cert.key
+echo "Generating cert and key: cert.pem, cert.key"
 
 openssl req -new -nodes -x509 -out cert.pemm \
 -keyout cert.key -days 3650 \
